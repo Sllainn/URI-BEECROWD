@@ -1,0 +1,59 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class URI 1061 {
+
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+
+        sc.next(); 
+        int diaInicio = sc.nextInt();
+        int horaInicio = sc.nextInt();
+        sc.next(); 
+        int minutoInicio = sc.nextInt();
+        sc.next(); 
+        int segundoInicio = sc.nextInt();
+
+        sc.next(); 
+        int diaFim = sc.nextInt();
+        int horaFim = sc.nextInt();
+        sc.next(); 
+        int minutoFim = sc.nextInt();
+        sc.next();
+        int segundoFim = sc.nextInt();
+
+        int segundosInicio = diaInicio * 86400 + horaInicio * 3600 + minutoInicio * 60 + segundoInicio;
+        int segundosFim = diaFim * 86400 + horaFim * 3600 + minutoFim * 60 + segundoFim;
+
+        int duracao = segundosFim - segundosInicio;
+
+        int dias = 0, horas = 0, minutos = 0, segundos = 0;
+
+        for (int etapa = 1; etapa <= 4; etapa++) {
+            switch (etapa) {
+                case 1:
+                    dias = duracao / 86400;
+                    duracao = duracao % 86400;
+                    break;
+                case 2:
+                    horas = duracao / 3600;
+                    duracao = duracao % 3600;
+                    break;
+                case 3:
+                    minutos = duracao / 60;
+                    duracao = duracao % 60;
+                    break;
+                case 4:
+                    segundos = duracao;
+                    break;
+            }
+        }
+
+        System.out.println(dias + " dia(s)");
+        System.out.println(horas + " hora(s)");
+        System.out.println(minutos + " minuto(s)");
+        System.out.println(segundos + " segundo(s)");
+
+        sc.close();
+    }
+}

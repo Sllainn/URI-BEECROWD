@@ -1,0 +1,47 @@
+import java.io.IOException;
+ import java.util.Scanner;
+
+public class URI 1049 {
+ 
+    public static void main(String[] args) throws IOException {
+    Scanner in = new Scanner(System.in);
+
+        String tipo = in.nextLine();       // vertebrado ou invertebrado
+        String classe = in.nextLine();     // ave, mamifero, inseto, anelideo
+        String alimentacao = in.nextLine(); // carnivoro, onivoro, herbivoro, hematofago
+
+        String chave = tipo + "-" + classe + "-" + alimentacao;
+
+        switch (chave) {
+            case "vertebrado-ave-carnivoro":
+                System.out.println("aguia");
+                break;
+            case "vertebrado-ave-onivoro":
+                System.out.println("pomba");
+                break;
+            case "vertebrado-mamifero-onivoro":
+                System.out.println("homem");
+                break;
+            case "vertebrado-mamifero-herbivoro":
+                System.out.println("vaca");
+                break;
+            case "invertebrado-inseto-hematofago":
+                System.out.println("pulga");
+                break;
+            case "invertebrado-inseto-herbivoro":
+                System.out.println("lagarta");
+                break;
+            case "invertebrado-anelideo-hematofago":
+                System.out.println("sanguessuga");
+                break;
+            case "invertebrado-anelideo-onivoro":
+                System.out.println("minhoca");
+                break;
+            default:
+                System.out.println("Animal desconhecido");
+                break;
+        }
+
+        in.close();
+    }
+}

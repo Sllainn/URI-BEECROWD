@@ -1,0 +1,24 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class URI 1060 {
+    public static void main(String[] args) throws IOException  {
+        Scanner sc = new Scanner(System.in);
+
+        int positivos = 0;
+
+        for (int i = 0; i < 6; i++) {
+            float valor = sc.nextFloat();
+
+            switch (valor > 0 ? 1 : 0) {
+                case 1:
+                    positivos++;break;
+                case 0:
+                    break;
+            }
+        }
+
+        System.out.println(positivos + " valores positivos");
+        sc.close();
+    }
+}
